@@ -123,7 +123,6 @@ Then checking the current location’s arrows: If red: `step_size += 1`; If yell
 
 ---
 
-The part 3 is tracing the path reversely to find the path. The whole part 3 is done in the wrapper function of DFS algorithm. It takes another two
 The part 3 is tracing the path reversely to find the path. The whole part 3 is done in the wrapper function of DFS algorithm. It takes another two parameters:
 
 - `final_x`: The goal location (x-axis) 
@@ -131,3 +130,51 @@ The part 3 is tracing the path reversely to find the path. The whole part 3 is d
 - `final_y`: The goal location (y-axis)
 
 The algorithm traces reversely which from the goal to initial and the minimum steps required is also stored in that 2D list. Lastly the algorithm prints out the path.
+
+
+
+## Examples
+
+There are 6 interesting mazes for testing.
+
+1. First test is testing when the goal and staring position are the same. This maze is simple and the algorithm should not step on any other locations but return. This checked if the algorithm will reach the goal than return. 
+
+   <img src="Examples/example1.png" alt="Alice Maze Example2" width="100" height="100">
+
+   1. Expected result: (0, 1)→ (0, 1), 0 
+   2. Actual result: (0, 1)→ (0, 1), 0
+
+2. Second test is testing two conditions: if red and yellow arrows enlarge the step or reduce the step size and if the algorithm detects no solutions. 
+
+   <img src="Examples/example2.png" alt="Alice Maze Example2" width="100" height="100">
+
+   1. Expected result: No solution 
+   2. Actual result: No solution
+
+3. Third test is testing if the algorithm detects no solutions. Every location is able to revisit, and the algorithm needs to determine if the revisit is revisit-able.
+
+   <img src="Examples/example3.png" alt="Alice Maze Example3" width="100" height="100">
+
+   1. Expected result: No solution
+   2. Actual result: No solution
+
+4. Fourth test is testing if the algorithm able to find the correct way to the goal. There are many directions and non-visit-able locations.
+
+   <img src="Examples/example4.png" alt="Alice Maze Example3" width="150" height="150">
+
+   1. Expected result: (3, 0)→ (3, 1)→ (3, 3)→ (0, 3), 3
+   2. Actual result: (3, 0)→ (3, 1)→ (3, 3)→ (0, 3), 3
+
+5. Fifth test is testing is the algorithm able to find the correct way to the goal. There is a row of blank. The only way there is by finding the red-arrow to get over it.
+
+   <img src="Examples/example5.png" alt="Alice Maze Example4" width="150" height="150">
+
+   - Expected result: (3, 0)→ (2, 1)→ (2, 2)→ (0, 2)→ (0, 3), 4
+   - Actual result: (3, 0)→ (2, 1)→ (2, 2)→ (0, 2)→ (0, 3), 3
+
+6. Sixth test is a simplified maze that testing revisiting. When running complex mazes, it is very often to visit the same location more times than once. It is a simplified version of testing if reaching the goal requires revisiting. 
+
+   <img src="Examples/example6.png" alt="Alice Maze Example4" width="170" height="170">
+
+   1. Expected result: (3, 0)→ (3, 1)→ (3, 3)→ (3, 1)→ (0, 4), 4 
+   2. Actual result: (3, 0)→ (3, 1)→ (3, 3)→ (3, 1)→ (0, 4), 4
