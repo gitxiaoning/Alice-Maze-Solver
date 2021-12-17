@@ -32,23 +32,7 @@ This is an example of the Alice Mazes:
 
 The file stores maze in a csv format[^4]:
 
-1. - The first line is a integer which represents the size of maze: let size of
-
-     maze be n.
-
-   - The second line has two numbers and each represents the x and y coordi-
-
-     nate of the initial(staring) position.
-
-   - The third line has two numbers and each represents the x and y coordinate of the goal position.
-
-     From forth line to (4 + n)th line, contains n × n pairs of data. Each pair has a letter and a number: letter, number. Letters are only from the set: {R,Y,B,G,N}, where R stands for Red Arrow, Y stands for Yellow Arrow, B stands for Black Arrow, G stands for Goal, and N stands for no arrows. The numbers are direction of arrows:
-
-     <img src="Figures/direction.png" alt="Alice Maze Example" width="160" height="150">
-
-     Each number represents a direction as the image shown and 0 represents no directions. If there are multiple arrows at the same location, then on number is concatenated to one other. i.e. If there are directions of top(2) and right(4). Then 24 will represent it.
-
-2. - After the file is loaded, a tuple will be returned and stores all information: 
+1. - After the file is loaded, a tuple will be returned and stores all information: 
 
      `(maze size,initial x,initial y,maze grid,final x,final y)`
 
@@ -119,7 +103,7 @@ Otherwise, we `Update()` on current location.
 
 ***
 
-Then checking the current location’s arrows: If red: `step_size` += 1; If yellow: `step_size` -= 1; Else: do nothing with step size. Then loop every possible out-going direction. For every direction, we call make a `move()` to update the value in `curr_x` and `curr_y`; and `step_count += 1`. Then we call self recursively with new set of parameters. The algorithm will finally stop when all possible paths are reached.
+Then checking the current location’s arrows: If red: `step_size += 1`; If yellow: `step_size -= 1`; Else: do nothing with step size. Then loop every possible out-going direction. For every direction, we call make a `move()` to update the value in `curr_x` and `curr_y`; and `step_count += 1`. Then we call self recursively with new set of parameters. The algorithm will finally stop when all possible paths are reached.
 
 ---
 
