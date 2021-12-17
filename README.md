@@ -8,9 +8,8 @@ Alice Mazes are puzzles created by Robert Abbott.
 
 This is an example of the Alice Mazes:
 
-<img src="Examples/example_maze.png" alt="Example Alice Mazes" style="zoom:25%;" />
+<img src="Examples/example_maze.png" alt="Alice Maze Example" width="150" height="150">
 
 [^1]: https://www.logicmazes.com/alice.html
 
 ## Alice Maze Rules
-
