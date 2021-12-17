@@ -10,10 +10,7 @@ This is an example of the Alice Mazes:
 
 <img src="Examples/example_maze.png" alt="Example Alice Mazes" style="zoom:25%;" />
 
-
-
-
-
-
-
 [^1]: https://www.logicmazes.com/alice.html
+
+## Alice Maze Rules
+
