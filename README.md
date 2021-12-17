@@ -64,8 +64,6 @@ The file stores maze in a csv format[^4]:
     - `previous_list`: stores all (previous x, previous y) which are node came from to current location. (the origin come from) It is useful when we trace back from the goal.
     - `step_size_list`: stores all unique step size that visited this loca- tion. It is useful when one of location is required to step twice.
 
-1. 
-
 [^4]: In my solution, it only solves the square mazes
 
 ## Algorithm
