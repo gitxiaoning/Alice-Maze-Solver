@@ -65,3 +65,70 @@ The file stores maze in a csv format[^4]:
        - `step_size_list`: stores all unique step size that visited this loca- tion. It is useful when one of location is required to step twice.
 
 [^4]: In my solution, it only solves the square mazes
+
+## Algorithm
+
+There are two parts of my algorithm to find the shortest solution:
+
+1. Load and interpret the maze.txt file and store it in a 2D list.
+
+2. Store the path in the 2D array, with taking the input of the 2D list which represents the maze.
+
+3. Trace back the path in the 2D list to find the shortest solution.
+
+Part 1 is explained in **Matrix Representation**, so we dive into part 2 and 3 .
+
+***
+
+The algorithm is an adapted DFS algorithm. There are more parameters com- pare to regular DFS:
+
+- `previous_x`: the previous location (x-axis) where Alice is came from.
+
+- `previous_y`: the previous location (y-axis) where Alice is came from.
+
+- `maze_size`: stores the size of the maze.
+
+- `curr_x`: the current location (x-axis) where Alice is at.
+
+- `curr_y`: the current location (y-axis) where Alice is at.
+
+- `maze_grid`: the 2D array that stores every arrow’s colour, blocks’ arrows,
+
+  and the minimal steps required to visit
+
+- `step_size`: the step size for next step.
+
+- `step_count`: the total steps that moved so far.
+
+***
+
+Differ from the regular DFS, there are 5 more base cases added (The order matters):
+
+1. When the current location is outside of the maze, then this move is invalid and there are no future moves.
+2. When the current location has no direction arrows, then this step is invalid and there are no future moves.
+3. When the current location is the goal than this move is valid but there are no future moves and if `step_count` is smaller than `step_count` stored in current location or current location is never visited, then `Update()`.
+4. When the current location is once visited before with the same step size, which means the `step_size_list` stored in current location contains `step_size`, and stepcount stored in current location is smaller than `step_count`, there are no future steps and no `Update()`.
+5. When `step_size` is 0, there are no future steps.
+
+Otherwise, we `Update()` on current location.
+
+`Update()`will do:
+
+- If the current location is never visited, replace the *infinity* (the first element in `step_count_list` stored in current location) to `step_count`, append `step_size` to `step_size_list` stored in current location, and append `(previous_x, previous_y)` to `previous_list` stored in current location.
+- If the current location is visited because `step_size_list` stored in current location contains `step_size` (Since we did not reach the base case, we can assume step count stored in current location is greater than `step_count`), then replace the corresponding `step_count` and `(previous_x, previous_y)` in step `size_list` and `previous_list` stored in current location.
+
+***
+
+Then checking the current location’s arrows: If red: `step_size` += 1; If yellow: `step_size` -= 1; Else: do nothing with step size. Then loop every possible out-going direction. For every direction, we call make a `move()` to update the value in `curr_x` and `curr_y`; and `step_count += 1`. Then we call self recursively with new set of parameters. The algorithm will finally stop when all possible paths are reached.
+
+---
+
+The part 3 is tracing the path reversely to find the path. The whole part 3 is done in the wrapper function of DFS algorithm. It takes another two
+
+parameters:
+
+- `final_x`: The goal location (x-axis) 
+
+- `final_y`: The goal location (y-axis)
+
+The algorithm traces reversely which from the goal to initial and the minimum steps required is also stored in that 2D list. Lastly the algorithm prints out the path.
