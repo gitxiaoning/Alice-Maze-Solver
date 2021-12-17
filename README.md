@@ -141,29 +141,33 @@ There are 6 interesting mazes for testing.
 
    <img src="Examples/example1.png" alt="Alice Maze Example2" width="100" height="100">
 
-   1. Expected result: (0, 1)→ (0, 1), 0 
-   2. Actual result: (0, 1)→ (0, 1), 0
+   - Expected result: (0, 1)→ (0, 1), 0 
+
+   - Actual result: (0, 1)→ (0, 1), 0
 
 2. Second test is testing two conditions: if red and yellow arrows enlarge the step or reduce the step size and if the algorithm detects no solutions. 
 
    <img src="Examples/example2.png" alt="Alice Maze Example2" width="100" height="100">
 
-   1. Expected result: No solution 
-   2. Actual result: No solution
+   - Expected result: No solution 
+
+   - Actual result: No solution
 
 3. Third test is testing if the algorithm detects no solutions. Every location is able to revisit, and the algorithm needs to determine if the revisit is revisit-able.
 
    <img src="Examples/example3.png" alt="Alice Maze Example3" width="100" height="100">
 
-   1. Expected result: No solution
-   2. Actual result: No solution
+   - Expected result: No solution
+
+   - Actual result: No solution
 
 4. Fourth test is testing if the algorithm able to find the correct way to the goal. There are many directions and non-visit-able locations.
 
    <img src="Examples/example4.png" alt="Alice Maze Example3" width="150" height="150">
 
-   1. Expected result: (3, 0)→ (3, 1)→ (3, 3)→ (0, 3), 3
-   2. Actual result: (3, 0)→ (3, 1)→ (3, 3)→ (0, 3), 3
+   - Expected result: (3, 0)→ (3, 1)→ (3, 3)→ (0, 3), 3
+
+   - Actual result: (3, 0)→ (3, 1)→ (3, 3)→ (0, 3), 3
 
 5. Fifth test is testing is the algorithm able to find the correct way to the goal. There is a row of blank. The only way there is by finding the red-arrow to get over it.
 
@@ -176,5 +180,5 @@ There are 6 interesting mazes for testing.
 
    <img src="Examples/example6.png" alt="Alice Maze Example4" width="170" height="170">
 
-   1. Expected result: (3, 0)→ (3, 1)→ (3, 3)→ (3, 1)→ (0, 4), 4 
-   2. Actual result: (3, 0)→ (3, 1)→ (3, 3)→ (3, 1)→ (0, 4), 4
+   - Expected result: (3, 0)→ (3, 1)→ (3, 3)→ (3, 1)→ (0, 4), 4 
+   - Actual result: (3, 0)→ (3, 1)→ (3, 3)→ (3, 1)→ (0, 4), 4
