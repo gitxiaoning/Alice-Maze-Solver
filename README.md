@@ -124,8 +124,7 @@ Then checking the current location’s arrows: If red: `step_size += 1`; If yell
 ---
 
 The part 3 is tracing the path reversely to find the path. The whole part 3 is done in the wrapper function of DFS algorithm. It takes another two
-
-parameters:
+The part 3 is tracing the path reversely to find the path. The whole part 3 is done in the wrapper function of DFS algorithm. It takes another two parameters:
 
 - `final_x`: The goal location (x-axis) 
 
