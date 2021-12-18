@@ -76,7 +76,7 @@ There are two parts of my algorithm to find the shortest solution:
 
 3. Trace back the path in the 2D list to find the shortest solution.
 
-Part 1 is explained in **Matrix Representation**, so we dive into part 2 and 3 .
+Part 1 is explained in **Maze Representation**, so we dive into part 2 and 3 .
 
 ***
 
